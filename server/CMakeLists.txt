@@ -9,6 +9,7 @@ project (rusync_server)
 
 file(GLOB SOURCE_FILES 
         "src/main.cpp"
+        "src/ServerSync.cpp"
         "${PROJECT_ROOT}/common/DirEntry.cpp")
 add_executable(${PROJECT_NAME} ${SOURCE_FILES} )
 target_link_directories(${PROJECT_NAME} PUBLIC 
