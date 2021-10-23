@@ -1,4 +1,5 @@
 #include "ServerSync.hpp"
+#include <filesystem>
 
 namespace rusync {
 ServerSync::ServerSync(const Config& config) : m_conf {config} {
@@ -133,18 +134,20 @@ void ServerSync::handle_files_description_request(const nghttp2::asio_http2::ser
         res.end();
         return;
     }
-    auto local_entries = extract_entries_from_path<std::vector<DirEntry>>(m_conf.path / query_params["key"]);
     rapidjson::Document doc(rapidjson::kArrayType);
     rapidjson::Document::AllocatorType& alloc = doc.GetAllocator();
-
-    for (const auto& entry: local_entries) {
-        rapidjson::Value obj;
-        obj.SetObject();
-        obj.GetObject().AddMember("path", rapidjson::Value().SetString(entry.path.c_str(), alloc), alloc);
-        obj.GetObject().AddMember("type", rapidjson::Value().SetString(entry.type_str().c_str(), alloc), alloc);
-        obj.GetObject().AddMember("hash", rapidjson::Value().SetUint64(entry.hash), alloc);
-        doc.PushBack(obj, alloc);
+    if (fs::exists(m_conf.path / query_params["key"])) {
+        auto local_entries = extract_entries_from_path<std::vector<DirEntry>>(m_conf.path / query_params["key"]);
+        for (const auto& entry: local_entries) {
+            rapidjson::Value obj;
+            obj.SetObject();
+            obj.GetObject().AddMember("path", rapidjson::Value().SetString(entry.path.c_str(), alloc), alloc);
+            obj.GetObject().AddMember("type", rapidjson::Value().SetString(entry.type_str().c_str(), alloc), alloc);
+            obj.GetObject().AddMember("hash", rapidjson::Value().SetUint64(entry.hash), alloc);
+            doc.PushBack(obj, alloc);
+        }
     }
+
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer {buffer};
     doc.Accept(writer);
