@@ -7,7 +7,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(PROJECT_ROOT ${PROJECT_SOURCE_DIR})
 
 set(${CMAKE_BUILD_TYPE} Debug)
-execute_process(COMMAND conan install .. --build missing  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/)
+execute_process(COMMAND conan install .. --build missing  -s build_type=Debug WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/)
 
 include (${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS KEEP_RPATHS NO_OUTPUT_DIRS SKIP_STD)
