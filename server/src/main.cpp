@@ -1,45 +1,9 @@
-#include <algorithm>
-#include <array>
-#include <cstdio>
-#include <fstream>
+#include <syncstream>
 #include <iostream>
-#include "boost/algorithm/string/classification.hpp"
-#include "boost/algorithm/string/split.hpp"
-#include "boost/asio/io_service.hpp"
-#include "boost/asio/ip/tcp.hpp"
-#include "boost/algorithm/string.hpp"
-#include "boost/date_time/posix_time/posix_time_duration.hpp"
-#include "nghttp2/asio_http2.h"
-#include <bits/stdint-uintn.h>
-#include <nghttp2/asio_http2_server.h>
-#include <filesystem>
-#include <iterator>
-#include <set>
-#include <xxhash.h>
-#include <rapidjson/document.h>
-#include <algorithm>
-#include <string>
-#include "DirEntry.hpp"
-#include "FileChunk.hpp"
-#include "rapidjson/rapidjson.h"
-#include "rapidjson/stringbuffer.h"
-#include "rapidjson/writer.h"
-#include "BinaryWriter.hpp"
 #include "Config.hpp"
 #include "ServerSync.hpp"
-#include <syncstream>
-
 
 namespace rusync {
-
-namespace fs = std::filesystem;
-namespace asio = boost::asio;
-namespace sys = boost::system;
-
-
-
-
-
 
 
 int start(int argc, char** argv) {

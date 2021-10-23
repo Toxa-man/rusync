@@ -18,7 +18,7 @@ ServerSync::ServerSync(const Config& config) : m_conf {config} {
 void ServerSync::listen() {
     boost::system::error_code ec;
     std::osyncstream(std::cout) << "Server is listening" << std::endl;
-    if (m_server.listen_and_serve(ec, "localhost", "3000")) {
+    if (m_server.listen_and_serve(ec, m_conf.ip, m_conf.port)) {
         std::cerr << "error: " << ec.message() << std::endl;
     }
 }

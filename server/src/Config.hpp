@@ -13,7 +13,7 @@ struct Config {
 };
 
 
-Config parse_config(char** argv) {
+inline Config parse_config(char** argv) {
     return {
         argv[1],
         argv[2],
