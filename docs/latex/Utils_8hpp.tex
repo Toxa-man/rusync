@@ -1,0 +1,38 @@
+\hypertarget{Utils_8hpp}{}\doxysection{common/\+Utils.hpp File Reference}
+\label{Utils_8hpp}\index{common/Utils.hpp@{common/Utils.hpp}}
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+Include dependency graph for Utils.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Utils_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Utils_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacerusync}{rusync}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename ReqT $>$ }\\void \mbox{\hyperlink{namespacerusync_ad7400f8c45a7128eebc1e76bee80158e}{rusync\+::on\+\_\+full\+\_\+data}} (std\+::function$<$ void(std\+::vector$<$ char $>$)$>$ cb, const ReqT \&req)
+\begin{DoxyCompactList}\small\item\em Convinient function which accumulates data from http req/resp and passes it as vector$<$char$>$ to provided cb. \end{DoxyCompactList}\item 
+fs\+::path \mbox{\hyperlink{namespacerusync_aa65e2ef874979a1dab442c0aae527a85}{rusync\+::truncate\+\_\+path}} (fs\+::path path, fs\+::path origin)
+\begin{DoxyCompactList}\small\item\em erases origin from path \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacerusync_aa385384823fa3b7386309217842fce28}{rusync\+::url\+\_\+encode}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em percent-\/encode provided url \end{DoxyCompactList}\end{DoxyCompactItemize}

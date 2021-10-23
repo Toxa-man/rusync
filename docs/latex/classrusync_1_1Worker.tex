@@ -1,0 +1,112 @@
+\hypertarget{classrusync_1_1Worker}{}\doxysection{rusync\+::Worker Class Reference}
+\label{classrusync_1_1Worker}\index{rusync::Worker@{rusync::Worker}}
+
+
+Basic unit which perform all main operations on files.  
+
+
+
+
+{\ttfamily \#include $<$Worker.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546f}{Operation}} \{ \mbox{\hyperlink{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa33dd38862bc5ebb8d51fd34c06a187f6}{I\+N\+I\+T\+I\+A\+L\+\_\+\+S\+Y\+NC}}, 
+\mbox{\hyperlink{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa990c9293f19d9ca27290a42ac7adc9b7}{A\+D\+D\+ED}}, 
+\mbox{\hyperlink{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa52ebd0c19c24a8d4aeaa54d92a6c1b34}{R\+E\+M\+O\+V\+ED}}, 
+\mbox{\hyperlink{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa47f33f9b68f61902319f6464e4ab44a9}{M\+O\+D\+I\+F\+I\+ED}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of \mbox{\hyperlink{classrusync_1_1Worker}{Worker}} operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrusync_1_1Worker_aeb23661601bc1f7e57ec2a02081a8aec}{Worker}} (const \mbox{\hyperlink{structrusync_1_1Config}{Config}} \&conf)
+\item 
+\mbox{\hyperlink{classrusync_1_1Worker_abcce64aa113ff9b4cbe8d1bc69bfab1e}{$\sim$\+Worker}} ()
+\item 
+{\footnotesize template$<$Operation operation, typename ... Args$>$ }\\void \mbox{\hyperlink{classrusync_1_1Worker_ac5daedd5f45328c2d75a807724331e66}{perform\+\_\+operation}} (Args... args)
+\begin{DoxyCompactList}\small\item\em Dispatched operation args to specific handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic unit which perform all main operations on files. 
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546f}\label{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546f}} 
+\index{rusync::Worker@{rusync::Worker}!Operation@{Operation}}
+\index{Operation@{Operation}!rusync::Worker@{rusync::Worker}}
+\doxysubsubsection{\texorpdfstring{Operation}{Operation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546f}{rusync\+::\+Worker\+::\+Operation}}}
+
+
+
+List of \mbox{\hyperlink{classrusync_1_1Worker}{Worker}} operations. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INITIAL\_SYNC@{INITIAL\_SYNC}!rusync::Worker@{rusync::Worker}}\index{rusync::Worker@{rusync::Worker}!INITIAL\_SYNC@{INITIAL\_SYNC}}}\mbox{\Hypertarget{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa33dd38862bc5ebb8d51fd34c06a187f6}\label{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa33dd38862bc5ebb8d51fd34c06a187f6}} 
+I\+N\+I\+T\+I\+A\+L\+\_\+\+S\+Y\+NC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADDED@{ADDED}!rusync::Worker@{rusync::Worker}}\index{rusync::Worker@{rusync::Worker}!ADDED@{ADDED}}}\mbox{\Hypertarget{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa990c9293f19d9ca27290a42ac7adc9b7}\label{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa990c9293f19d9ca27290a42ac7adc9b7}} 
+A\+D\+D\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REMOVED@{REMOVED}!rusync::Worker@{rusync::Worker}}\index{rusync::Worker@{rusync::Worker}!REMOVED@{REMOVED}}}\mbox{\Hypertarget{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa52ebd0c19c24a8d4aeaa54d92a6c1b34}\label{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa52ebd0c19c24a8d4aeaa54d92a6c1b34}} 
+R\+E\+M\+O\+V\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODIFIED@{MODIFIED}!rusync::Worker@{rusync::Worker}}\index{rusync::Worker@{rusync::Worker}!MODIFIED@{MODIFIED}}}\mbox{\Hypertarget{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa47f33f9b68f61902319f6464e4ab44a9}\label{classrusync_1_1Worker_aaf862b6aa7995cc54c7fe03076b0546fa47f33f9b68f61902319f6464e4ab44a9}} 
+M\+O\+D\+I\+F\+I\+ED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrusync_1_1Worker_aeb23661601bc1f7e57ec2a02081a8aec}\label{classrusync_1_1Worker_aeb23661601bc1f7e57ec2a02081a8aec}} 
+\index{rusync::Worker@{rusync::Worker}!Worker@{Worker}}
+\index{Worker@{Worker}!rusync::Worker@{rusync::Worker}}
+\doxysubsubsection{\texorpdfstring{Worker()}{Worker()}}
+{\footnotesize\ttfamily rusync\+::\+Worker\+::\+Worker (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structrusync_1_1Config}{Config}} \&}]{conf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrusync_1_1Worker_abcce64aa113ff9b4cbe8d1bc69bfab1e}\label{classrusync_1_1Worker_abcce64aa113ff9b4cbe8d1bc69bfab1e}} 
+\index{rusync::Worker@{rusync::Worker}!````~Worker@{$\sim$Worker}}
+\index{````~Worker@{$\sim$Worker}!rusync::Worker@{rusync::Worker}}
+\doxysubsubsection{\texorpdfstring{$\sim$Worker()}{~Worker()}}
+{\footnotesize\ttfamily rusync\+::\+Worker\+::$\sim$\+Worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrusync_1_1Worker_ac5daedd5f45328c2d75a807724331e66}\label{classrusync_1_1Worker_ac5daedd5f45328c2d75a807724331e66}} 
+\index{rusync::Worker@{rusync::Worker}!perform\_operation@{perform\_operation}}
+\index{perform\_operation@{perform\_operation}!rusync::Worker@{rusync::Worker}}
+\doxysubsubsection{\texorpdfstring{perform\_operation()}{perform\_operation()}}
+{\footnotesize\ttfamily template$<$Worker\+::\+Operation operation, typename ... Args$>$ \\
+void rusync\+::\+Worker\+::perform\+\_\+operation (\begin{DoxyParamCaption}\item[{Args...}]{args }\end{DoxyParamCaption})}
+
+
+
+Dispatched operation args to specific handler. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em operation} & \\
+\hline
+{\em Args} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+client/src/\mbox{\hyperlink{Worker_8hpp}{Worker.\+hpp}}\item 
+client/src/\mbox{\hyperlink{Worker_8cpp}{Worker.\+cpp}}\end{DoxyCompactItemize}

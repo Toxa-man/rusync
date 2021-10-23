@@ -1,0 +1,144 @@
+\hypertarget{structrusync_1_1DirEntry}{}\doxysection{rusync\+::Dir\+Entry Struct Reference}
+\label{structrusync_1_1DirEntry}\index{rusync::DirEntry@{rusync::DirEntry}}
+
+
+described entry within file system  
+
+
+
+
+{\ttfamily \#include $<$Dir\+Entry.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015}{Type}} \{ \mbox{\hyperlink{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015a9f8cda793012a7bb68b5f1a14a153a48}{F\+I\+LE}}, 
+\mbox{\hyperlink{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015ae5e803befd8e2285c242bce928ae7507}{D\+IR}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structrusync_1_1DirEntry_ae442e0661c7b9e1cb63acd1b14e01b3d}{Dir\+Entry}} (const std\+::string \&\mbox{\hyperlink{structrusync_1_1DirEntry_a94e3b55227d8ca272e05a96c793b86d1}{path}}, \mbox{\hyperlink{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015}{Type}} \mbox{\hyperlink{structrusync_1_1DirEntry_a42f097062ab91b6bf91644d82b7084d3}{type}}, uint64\+\_\+t \mbox{\hyperlink{structrusync_1_1DirEntry_ab174c2ebcc74c0d86fa209667f4884a6}{hash}})
+\item 
+std\+::string \mbox{\hyperlink{structrusync_1_1DirEntry_a7dc4919102a64c22cbcb8d3e477ebe05}{type\+\_\+str}} () const
+\begin{DoxyCompactList}\small\item\em converts entry type to string \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} \mbox{\hyperlink{structrusync_1_1DirEntry_a2ba8bcb519659f1264624e879d6718b8}{from\+\_\+path}} (fs\+::path \mbox{\hyperlink{structrusync_1_1DirEntry_a94e3b55227d8ca272e05a96c793b86d1}{path}}, fs\+::path origin)
+\begin{DoxyCompactList}\small\item\em Created \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} object from path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015}{rusync\+::\+Dir\+Entry\+::\+Type}} \mbox{\hyperlink{structrusync_1_1DirEntry_a42f097062ab91b6bf91644d82b7084d3}{type}}
+\item 
+std\+::string \mbox{\hyperlink{structrusync_1_1DirEntry_a94e3b55227d8ca272e05a96c793b86d1}{path}}
+\begin{DoxyCompactList}\small\item\em truncated path to entry (without path to client dir) \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{structrusync_1_1DirEntry_ab174c2ebcc74c0d86fa209667f4884a6}{hash}}
+\begin{DoxyCompactList}\small\item\em Entry hash. For files computed with X\+X\+H64 alg with seed=0. For dirs hash is always 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+described entry within file system 
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015}\label{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015}} 
+\index{rusync::DirEntry@{rusync::DirEntry}!Type@{Type}}
+\index{Type@{Type}!rusync::DirEntry@{rusync::DirEntry}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015}{rusync\+::\+Dir\+Entry\+::\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILE@{FILE}!rusync::DirEntry@{rusync::DirEntry}}\index{rusync::DirEntry@{rusync::DirEntry}!FILE@{FILE}}}\mbox{\Hypertarget{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015a9f8cda793012a7bb68b5f1a14a153a48}\label{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015a9f8cda793012a7bb68b5f1a14a153a48}} 
+F\+I\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIR@{DIR}!rusync::DirEntry@{rusync::DirEntry}}\index{rusync::DirEntry@{rusync::DirEntry}!DIR@{DIR}}}\mbox{\Hypertarget{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015ae5e803befd8e2285c242bce928ae7507}\label{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015ae5e803befd8e2285c242bce928ae7507}} 
+D\+IR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structrusync_1_1DirEntry_ae442e0661c7b9e1cb63acd1b14e01b3d}\label{structrusync_1_1DirEntry_ae442e0661c7b9e1cb63acd1b14e01b3d}} 
+\index{rusync::DirEntry@{rusync::DirEntry}!DirEntry@{DirEntry}}
+\index{DirEntry@{DirEntry}!rusync::DirEntry@{rusync::DirEntry}}
+\doxysubsubsection{\texorpdfstring{DirEntry()}{DirEntry()}}
+{\footnotesize\ttfamily rusync\+::\+Dir\+Entry\+::\+Dir\+Entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015}{Dir\+Entry\+::\+Type}}}]{type,  }\item[{uint64\+\_\+t}]{hash }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structrusync_1_1DirEntry_a2ba8bcb519659f1264624e879d6718b8}\label{structrusync_1_1DirEntry_a2ba8bcb519659f1264624e879d6718b8}} 
+\index{rusync::DirEntry@{rusync::DirEntry}!from\_path@{from\_path}}
+\index{from\_path@{from\_path}!rusync::DirEntry@{rusync::DirEntry}}
+\doxysubsubsection{\texorpdfstring{from\_path()}{from\_path()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} rusync\+::\+Dir\+Entry\+::from\+\_\+path (\begin{DoxyParamCaption}\item[{fs\+::path}]{path,  }\item[{fs\+::path}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Created \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} object from path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & -\/ path to entry \\
+\hline
+{\em origin} & -\/ path to client dir. Need to perform truncation.~\newline
+ e.\+g. if path == \char`\"{}client\+\_\+dir/test.\+txt\char`\"{} and origin == \char`\"{}client\+\_\+dir\char`\"{} result \mbox{\hyperlink{structrusync_1_1DirEntry_a94e3b55227d8ca272e05a96c793b86d1}{Dir\+Entry.\+path}} will be equal to \char`\"{}test.\+txt\char`\"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structrusync_1_1DirEntry_a7dc4919102a64c22cbcb8d3e477ebe05}\label{structrusync_1_1DirEntry_a7dc4919102a64c22cbcb8d3e477ebe05}} 
+\index{rusync::DirEntry@{rusync::DirEntry}!type\_str@{type\_str}}
+\index{type\_str@{type\_str}!rusync::DirEntry@{rusync::DirEntry}}
+\doxysubsubsection{\texorpdfstring{type\_str()}{type\_str()}}
+{\footnotesize\ttfamily std\+::string rusync\+::\+Dir\+Entry\+::type\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+converts entry type to string 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structrusync_1_1DirEntry_ab174c2ebcc74c0d86fa209667f4884a6}\label{structrusync_1_1DirEntry_ab174c2ebcc74c0d86fa209667f4884a6}} 
+\index{rusync::DirEntry@{rusync::DirEntry}!hash@{hash}}
+\index{hash@{hash}!rusync::DirEntry@{rusync::DirEntry}}
+\doxysubsubsection{\texorpdfstring{hash}{hash}}
+{\footnotesize\ttfamily uint64\+\_\+t rusync\+::\+Dir\+Entry\+::hash}
+
+
+
+Entry hash. For files computed with X\+X\+H64 alg with seed=0. For dirs hash is always 0. 
+
+\mbox{\Hypertarget{structrusync_1_1DirEntry_a94e3b55227d8ca272e05a96c793b86d1}\label{structrusync_1_1DirEntry_a94e3b55227d8ca272e05a96c793b86d1}} 
+\index{rusync::DirEntry@{rusync::DirEntry}!path@{path}}
+\index{path@{path}!rusync::DirEntry@{rusync::DirEntry}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily std\+::string rusync\+::\+Dir\+Entry\+::path}
+
+
+
+truncated path to entry (without path to client dir) 
+
+\mbox{\Hypertarget{structrusync_1_1DirEntry_a42f097062ab91b6bf91644d82b7084d3}\label{structrusync_1_1DirEntry_a42f097062ab91b6bf91644d82b7084d3}} 
+\index{rusync::DirEntry@{rusync::DirEntry}!type@{type}}
+\index{type@{type}!rusync::DirEntry@{rusync::DirEntry}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structrusync_1_1DirEntry_a3c2adcf27da34d0a27fa806e720f4015}{rusync\+::\+Dir\+Entry\+::\+Type}} rusync\+::\+Dir\+Entry\+::type}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+common/\mbox{\hyperlink{DirEntry_8hpp}{Dir\+Entry.\+hpp}}\item 
+common/\mbox{\hyperlink{DirEntry_8cpp}{Dir\+Entry.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+\hypertarget{classrusync_1_1SyncApp}{}\doxysection{rusync\+::Sync\+App Class Reference}
+\label{classrusync_1_1SyncApp}\index{rusync::SyncApp@{rusync::SyncApp}}
+
+
+Main class responsible for application logic.  
+
+
+
+
+{\ttfamily \#include $<$Sync\+App.\+hpp$>$}
+
+
+
+Inheritance diagram for rusync\+::Sync\+App\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classrusync_1_1SyncApp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for rusync\+::Sync\+App\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classrusync_1_1SyncApp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrusync_1_1SyncApp_a7419b2de17ec6ee0b2e36bedcc03f8e7}{Sync\+App}} (const \mbox{\hyperlink{structrusync_1_1Config}{Config}} \&config)
+\item 
+void \mbox{\hyperlink{classrusync_1_1SyncApp_a37c11e362f4ca12854581ea9acb50bc7}{full\+\_\+sync}} ()
+\begin{DoxyCompactList}\small\item\em perform full sync between client and server \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrusync_1_1SyncApp_ae5c04fa1287f3e9d17cb5459a50fe8ff}{handle\+File\+Action}} (efsw\+::\+Watch\+ID watchid, const std\+::string \&dir, const std\+::string \&filename, efsw\+::\+Action action, std\+::string old\+Filename) override
+\begin{DoxyCompactList}\small\item\em Called when new event occured within watched client folder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main class responsible for application logic. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrusync_1_1SyncApp_a7419b2de17ec6ee0b2e36bedcc03f8e7}\label{classrusync_1_1SyncApp_a7419b2de17ec6ee0b2e36bedcc03f8e7}} 
+\index{rusync::SyncApp@{rusync::SyncApp}!SyncApp@{SyncApp}}
+\index{SyncApp@{SyncApp}!rusync::SyncApp@{rusync::SyncApp}}
+\doxysubsubsection{\texorpdfstring{SyncApp()}{SyncApp()}}
+{\footnotesize\ttfamily rusync\+::\+Sync\+App\+::\+Sync\+App (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structrusync_1_1Config}{Config}} \&}]{config }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrusync_1_1SyncApp_a37c11e362f4ca12854581ea9acb50bc7}\label{classrusync_1_1SyncApp_a37c11e362f4ca12854581ea9acb50bc7}} 
+\index{rusync::SyncApp@{rusync::SyncApp}!full\_sync@{full\_sync}}
+\index{full\_sync@{full\_sync}!rusync::SyncApp@{rusync::SyncApp}}
+\doxysubsubsection{\texorpdfstring{full\_sync()}{full\_sync()}}
+{\footnotesize\ttfamily void rusync\+::\+Sync\+App\+::full\+\_\+sync (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+perform full sync between client and server 
+
+\mbox{\Hypertarget{classrusync_1_1SyncApp_ae5c04fa1287f3e9d17cb5459a50fe8ff}\label{classrusync_1_1SyncApp_ae5c04fa1287f3e9d17cb5459a50fe8ff}} 
+\index{rusync::SyncApp@{rusync::SyncApp}!handleFileAction@{handleFileAction}}
+\index{handleFileAction@{handleFileAction}!rusync::SyncApp@{rusync::SyncApp}}
+\doxysubsubsection{\texorpdfstring{handleFileAction()}{handleFileAction()}}
+{\footnotesize\ttfamily void rusync\+::\+Sync\+App\+::handle\+File\+Action (\begin{DoxyParamCaption}\item[{efsw\+::\+Watch\+ID}]{watchid,  }\item[{const std\+::string \&}]{dir,  }\item[{const std\+::string \&}]{filename,  }\item[{efsw\+::\+Action}]{action,  }\item[{std\+::string}]{old\+Filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Called when new event occured within watched client folder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em watchid} & \\
+\hline
+{\em dir} & \\
+\hline
+{\em filename} & \\
+\hline
+{\em action} & \\
+\hline
+{\em old\+Filename} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+client/src/\mbox{\hyperlink{SyncApp_8hpp}{Sync\+App.\+hpp}}\item 
+client/src/\mbox{\hyperlink{SyncApp_8cpp}{Sync\+App.\+cpp}}\end{DoxyCompactItemize}

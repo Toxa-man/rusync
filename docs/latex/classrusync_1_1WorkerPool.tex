@@ -1,0 +1,66 @@
+\hypertarget{classrusync_1_1WorkerPool}{}\doxysection{rusync\+::Worker\+Pool Class Reference}
+\label{classrusync_1_1WorkerPool}\index{rusync::WorkerPool@{rusync::WorkerPool}}
+
+
+{\ttfamily \#include $<$Worker\+Pool.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrusync_1_1WorkerPool_a908037e1350b0e926eb362f2a9ff828d}{Worker\+Pool}} (const \mbox{\hyperlink{structrusync_1_1Config}{Config}} \&conf, unsigned size)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classrusync_1_1Worker}{Worker}} Pool object of size size. \end{DoxyCompactList}\item 
+{\footnotesize template$<$Worker\+::\+Operation operation, typename ... Args$>$ }\\void \mbox{\hyperlink{classrusync_1_1WorkerPool_a8641fa9aea4d789f55977990f367ca70}{post\+\_\+operation}} (Args... args)
+\begin{DoxyCompactList}\small\item\em post operation to worker. if request contains path as first parameter -\/ operations for same files will be always perfromed by the same worker.~\newline
+ Otherwise -\/ round robin is used to balance load \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrusync_1_1WorkerPool_a908037e1350b0e926eb362f2a9ff828d}\label{classrusync_1_1WorkerPool_a908037e1350b0e926eb362f2a9ff828d}} 
+\index{rusync::WorkerPool@{rusync::WorkerPool}!WorkerPool@{WorkerPool}}
+\index{WorkerPool@{WorkerPool}!rusync::WorkerPool@{rusync::WorkerPool}}
+\doxysubsubsection{\texorpdfstring{WorkerPool()}{WorkerPool()}}
+{\footnotesize\ttfamily rusync\+::\+Worker\+Pool\+::\+Worker\+Pool (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structrusync_1_1Config}{Config}} \&}]{conf,  }\item[{unsigned}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classrusync_1_1Worker}{Worker}} Pool object of size size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conf} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrusync_1_1WorkerPool_a8641fa9aea4d789f55977990f367ca70}\label{classrusync_1_1WorkerPool_a8641fa9aea4d789f55977990f367ca70}} 
+\index{rusync::WorkerPool@{rusync::WorkerPool}!post\_operation@{post\_operation}}
+\index{post\_operation@{post\_operation}!rusync::WorkerPool@{rusync::WorkerPool}}
+\doxysubsubsection{\texorpdfstring{post\_operation()}{post\_operation()}}
+{\footnotesize\ttfamily template$<$Worker\+::\+Operation operation, typename ... Args$>$ \\
+void rusync\+::\+Worker\+Pool\+::post\+\_\+operation (\begin{DoxyParamCaption}\item[{Args...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+post operation to worker. if request contains path as first parameter -\/ operations for same files will be always perfromed by the same worker.~\newline
+ Otherwise -\/ round robin is used to balance load 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em operation} & \\
+\hline
+{\em Args} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+client/src/\mbox{\hyperlink{WorkerPool_8hpp}{Worker\+Pool.\+hpp}}\end{DoxyCompactItemize}

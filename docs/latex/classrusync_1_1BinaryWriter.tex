@@ -1,0 +1,71 @@
+\hypertarget{classrusync_1_1BinaryWriter}{}\doxysection{rusync\+::Binary\+Writer Class Reference}
+\label{classrusync_1_1BinaryWriter}\index{rusync::BinaryWriter@{rusync::BinaryWriter}}
+
+
+Conviniet class for writing object of different types to some binary buffer.  
+
+
+
+
+{\ttfamily \#include $<$Binary\+Writer.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrusync_1_1BinaryWriter_a6e9432054057cf10b32f0721413ec2a6}{Binary\+Writer}} (unsigned char $\ast$data, size\+\_\+t length)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classrusync_1_1BinaryWriter_a7f85ce6b1fab4acb833bc690aed702f2}{write}} (T value)
+\item 
+void \mbox{\hyperlink{classrusync_1_1BinaryWriter_a7777b11c89358de885753ca8583e2377}{write}} (const unsigned char $\ast$data, size\+\_\+t length)
+\item 
+unsigned char $\ast$ \mbox{\hyperlink{classrusync_1_1BinaryWriter_a0d98290d524b825ecee5b83665aeb86e}{get\+\_\+current}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classrusync_1_1BinaryWriter_a05087aba27b02e5c6e1142e893291737}{get\+\_\+bytes\+\_\+remain}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Conviniet class for writing object of different types to some binary buffer. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrusync_1_1BinaryWriter_a6e9432054057cf10b32f0721413ec2a6}\label{classrusync_1_1BinaryWriter_a6e9432054057cf10b32f0721413ec2a6}} 
+\index{rusync::BinaryWriter@{rusync::BinaryWriter}!BinaryWriter@{BinaryWriter}}
+\index{BinaryWriter@{BinaryWriter}!rusync::BinaryWriter@{rusync::BinaryWriter}}
+\doxysubsubsection{\texorpdfstring{BinaryWriter()}{BinaryWriter()}}
+{\footnotesize\ttfamily rusync\+::\+Binary\+Writer\+::\+Binary\+Writer (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{data,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrusync_1_1BinaryWriter_a05087aba27b02e5c6e1142e893291737}\label{classrusync_1_1BinaryWriter_a05087aba27b02e5c6e1142e893291737}} 
+\index{rusync::BinaryWriter@{rusync::BinaryWriter}!get\_bytes\_remain@{get\_bytes\_remain}}
+\index{get\_bytes\_remain@{get\_bytes\_remain}!rusync::BinaryWriter@{rusync::BinaryWriter}}
+\doxysubsubsection{\texorpdfstring{get\_bytes\_remain()}{get\_bytes\_remain()}}
+{\footnotesize\ttfamily size\+\_\+t rusync\+::\+Binary\+Writer\+::get\+\_\+bytes\+\_\+remain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classrusync_1_1BinaryWriter_a0d98290d524b825ecee5b83665aeb86e}\label{classrusync_1_1BinaryWriter_a0d98290d524b825ecee5b83665aeb86e}} 
+\index{rusync::BinaryWriter@{rusync::BinaryWriter}!get\_current@{get\_current}}
+\index{get\_current@{get\_current}!rusync::BinaryWriter@{rusync::BinaryWriter}}
+\doxysubsubsection{\texorpdfstring{get\_current()}{get\_current()}}
+{\footnotesize\ttfamily unsigned char$\ast$ rusync\+::\+Binary\+Writer\+::get\+\_\+current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classrusync_1_1BinaryWriter_a7777b11c89358de885753ca8583e2377}\label{classrusync_1_1BinaryWriter_a7777b11c89358de885753ca8583e2377}} 
+\index{rusync::BinaryWriter@{rusync::BinaryWriter}!write@{write}}
+\index{write@{write}!rusync::BinaryWriter@{rusync::BinaryWriter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void rusync\+::\+Binary\+Writer\+::write (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{data,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classrusync_1_1BinaryWriter_a7f85ce6b1fab4acb833bc690aed702f2}\label{classrusync_1_1BinaryWriter_a7f85ce6b1fab4acb833bc690aed702f2}} 
+\index{rusync::BinaryWriter@{rusync::BinaryWriter}!write@{write}}
+\index{write@{write}!rusync::BinaryWriter@{rusync::BinaryWriter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void rusync\+::\+Binary\+Writer\+::write (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+server/src/\mbox{\hyperlink{BinaryWriter_8hpp}{Binary\+Writer.\+hpp}}\end{DoxyCompactItemize}

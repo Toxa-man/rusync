@@ -1,0 +1,100 @@
+\hypertarget{classrusync_1_1BinaryParser}{}\doxysection{rusync\+::Binary\+Parser Class Reference}
+\label{classrusync_1_1BinaryParser}\index{rusync::BinaryParser@{rusync::BinaryParser}}
+
+
+Contains methods for convinient extracting of object from binary blob.  
+
+
+
+
+{\ttfamily \#include $<$Binary\+Parser.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrusync_1_1BinaryParser_aec84f5af471c0b67ddac53d61ceac854}{Binary\+Parser}} (const unsigned char $\ast$data, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Construct a new Binary Parser object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{classrusync_1_1BinaryParser_a94242101b8b5835ed04492929efbf223}{read}} ()
+\begin{DoxyCompactList}\small\item\em reads object of type T \end{DoxyCompactList}\item 
+const unsigned char $\ast$ \mbox{\hyperlink{classrusync_1_1BinaryParser_af2206b7605531747c5d39a09759c58a7}{get\+\_\+current}} () const
+\begin{DoxyCompactList}\small\item\em Get pointer to current position within binary data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classrusync_1_1BinaryParser_a96edc2f8f369665b8711d6b2204ca5ba}{get\+\_\+bytes\+\_\+remain}} () const
+\begin{DoxyCompactList}\small\item\em Get remaining bytes of input binary data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains methods for convinient extracting of object from binary blob. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrusync_1_1BinaryParser_aec84f5af471c0b67ddac53d61ceac854}\label{classrusync_1_1BinaryParser_aec84f5af471c0b67ddac53d61ceac854}} 
+\index{rusync::BinaryParser@{rusync::BinaryParser}!BinaryParser@{BinaryParser}}
+\index{BinaryParser@{BinaryParser}!rusync::BinaryParser@{rusync::BinaryParser}}
+\doxysubsubsection{\texorpdfstring{BinaryParser()}{BinaryParser()}}
+{\footnotesize\ttfamily rusync\+::\+Binary\+Parser\+::\+Binary\+Parser (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{data,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Binary Parser object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+{\em length} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrusync_1_1BinaryParser_a96edc2f8f369665b8711d6b2204ca5ba}\label{classrusync_1_1BinaryParser_a96edc2f8f369665b8711d6b2204ca5ba}} 
+\index{rusync::BinaryParser@{rusync::BinaryParser}!get\_bytes\_remain@{get\_bytes\_remain}}
+\index{get\_bytes\_remain@{get\_bytes\_remain}!rusync::BinaryParser@{rusync::BinaryParser}}
+\doxysubsubsection{\texorpdfstring{get\_bytes\_remain()}{get\_bytes\_remain()}}
+{\footnotesize\ttfamily size\+\_\+t rusync\+::\+Binary\+Parser\+::get\+\_\+bytes\+\_\+remain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get remaining bytes of input binary data. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrusync_1_1BinaryParser_af2206b7605531747c5d39a09759c58a7}\label{classrusync_1_1BinaryParser_af2206b7605531747c5d39a09759c58a7}} 
+\index{rusync::BinaryParser@{rusync::BinaryParser}!get\_current@{get\_current}}
+\index{get\_current@{get\_current}!rusync::BinaryParser@{rusync::BinaryParser}}
+\doxysubsubsection{\texorpdfstring{get\_current()}{get\_current()}}
+{\footnotesize\ttfamily const unsigned char$\ast$ rusync\+::\+Binary\+Parser\+::get\+\_\+current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get pointer to current position within binary data. 
+
+\begin{DoxyReturn}{Returns}
+const unsigned$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrusync_1_1BinaryParser_a94242101b8b5835ed04492929efbf223}\label{classrusync_1_1BinaryParser_a94242101b8b5835ed04492929efbf223}} 
+\index{rusync::BinaryParser@{rusync::BinaryParser}!read@{read}}
+\index{read@{read}!rusync::BinaryParser@{rusync::BinaryParser}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T rusync\+::\+Binary\+Parser\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+reads object of type T 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & -\/ object to read, should be Default\+Constructable \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+T -\/ read object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+client/src/\mbox{\hyperlink{BinaryParser_8hpp}{Binary\+Parser.\+hpp}}\end{DoxyCompactItemize}

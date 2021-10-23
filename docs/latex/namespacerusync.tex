@@ -1,0 +1,178 @@
+\hypertarget{namespacerusync}{}\doxysection{rusync Namespace Reference}
+\label{namespacerusync}\index{rusync@{rusync}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classrusync_1_1BinaryParser}{Binary\+Parser}}
+\begin{DoxyCompactList}\small\item\em Contains methods for convinient extracting of object from binary blob. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrusync_1_1BinaryWriter}{Binary\+Writer}}
+\begin{DoxyCompactList}\small\item\em Conviniet class for writing object of different types to some binary buffer. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structrusync_1_1Config}{Config}}
+\item 
+struct \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}}
+\begin{DoxyCompactList}\small\item\em described entry within file system \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrusync_1_1ServerAPI}{Server\+A\+PI}}
+\begin{DoxyCompactList}\small\item\em Contains methods for work with remote server. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrusync_1_1ServerSync}{Server\+Sync}}
+\begin{DoxyCompactList}\small\item\em Main class responsible for serving file A\+PI. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrusync_1_1SyncApp}{Sync\+App}}
+\begin{DoxyCompactList}\small\item\em Main class responsible for application logic. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structrusync_1_1Thread}{Thread}}
+\item 
+class \mbox{\hyperlink{classrusync_1_1Worker}{Worker}}
+\begin{DoxyCompactList}\small\item\em Basic unit which perform all main operations on files. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrusync_1_1WorkerPool}{Worker\+Pool}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacerusync_abed745eb1d6bd4f7a5c0afacd21c4c91}{sigterm\+Handler}} (int signum)
+\item 
+int \mbox{\hyperlink{namespacerusync_a85a3b70fefdc4eb19c854a6185882fcc}{start}} (int argc, char $\ast$$\ast$argv)
+\item 
+\mbox{\hyperlink{structrusync_1_1Config}{Config}} \mbox{\hyperlink{namespacerusync_ae4c8efabcf29d552f01205aa3125df0d}{parse\+\_\+config}} (char $\ast$$\ast$argv)
+\item 
+bool \mbox{\hyperlink{namespacerusync_a2364a903505feb6163ac8d46463a9f5d}{operator$<$}} (const \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} \&l, const \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} \&r)
+\item 
+bool \mbox{\hyperlink{namespacerusync_a091a4282749fdc3b406187ba45da2fe3}{operator==}} (const \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} \&l, const \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} \&r)
+\item 
+{\footnotesize template$<$typename T  = std\+::set$<$\+Dir\+Entry$>$$>$ }\\T \mbox{\hyperlink{namespacerusync_a322e4f3088937c4977d6f6d78698fd78}{extract\+\_\+entries\+\_\+from\+\_\+path}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Extracts entries from path and returns it as container T of \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}}. Only counts regular files and dirs. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename ReqT $>$ }\\void \mbox{\hyperlink{namespacerusync_ad7400f8c45a7128eebc1e76bee80158e}{on\+\_\+full\+\_\+data}} (std\+::function$<$ void(std\+::vector$<$ char $>$)$>$ cb, const ReqT \&req)
+\begin{DoxyCompactList}\small\item\em Convinient function which accumulates data from http req/resp and passes it as vector$<$char$>$ to provided cb. \end{DoxyCompactList}\item 
+fs\+::path \mbox{\hyperlink{namespacerusync_aa65e2ef874979a1dab442c0aae527a85}{truncate\+\_\+path}} (fs\+::path path, fs\+::path origin)
+\begin{DoxyCompactList}\small\item\em erases origin from path \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacerusync_aa385384823fa3b7386309217842fce28}{url\+\_\+encode}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em percent-\/encode provided url \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic\+\_\+bool \mbox{\hyperlink{namespacerusync_a26b874e8e3b64292e377b4d8fcc0cc71}{stopped}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacerusync_a322e4f3088937c4977d6f6d78698fd78}\label{namespacerusync_a322e4f3088937c4977d6f6d78698fd78}} 
+\index{rusync@{rusync}!extract\_entries\_from\_path@{extract\_entries\_from\_path}}
+\index{extract\_entries\_from\_path@{extract\_entries\_from\_path}!rusync@{rusync}}
+\doxysubsubsection{\texorpdfstring{extract\_entries\_from\_path()}{extract\_entries\_from\_path()}}
+{\footnotesize\ttfamily template$<$typename T  = std\+::set$<$\+Dir\+Entry$>$$>$ \\
+T rusync\+::extract\+\_\+entries\+\_\+from\+\_\+path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Extracts entries from path and returns it as container T of \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}}. Only counts regular files and dirs. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacerusync_ad7400f8c45a7128eebc1e76bee80158e}\label{namespacerusync_ad7400f8c45a7128eebc1e76bee80158e}} 
+\index{rusync@{rusync}!on\_full\_data@{on\_full\_data}}
+\index{on\_full\_data@{on\_full\_data}!rusync@{rusync}}
+\doxysubsubsection{\texorpdfstring{on\_full\_data()}{on\_full\_data()}}
+{\footnotesize\ttfamily template$<$typename ReqT $>$ \\
+void rusync\+::on\+\_\+full\+\_\+data (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(std\+::vector$<$ char $>$)$>$}]{cb,  }\item[{const ReqT \&}]{req }\end{DoxyParamCaption})}
+
+
+
+Convinient function which accumulates data from http req/resp and passes it as vector$<$char$>$ to provided cb. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em ReqT} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em cb} & \\
+\hline
+{\em req} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacerusync_a2364a903505feb6163ac8d46463a9f5d}\label{namespacerusync_a2364a903505feb6163ac8d46463a9f5d}} 
+\index{rusync@{rusync}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!rusync@{rusync}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool rusync\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} \&}]{l,  }\item[{const \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespacerusync_a091a4282749fdc3b406187ba45da2fe3}\label{namespacerusync_a091a4282749fdc3b406187ba45da2fe3}} 
+\index{rusync@{rusync}!operator==@{operator==}}
+\index{operator==@{operator==}!rusync@{rusync}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool rusync\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} \&}]{l,  }\item[{const \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespacerusync_ae4c8efabcf29d552f01205aa3125df0d}\label{namespacerusync_ae4c8efabcf29d552f01205aa3125df0d}} 
+\index{rusync@{rusync}!parse\_config@{parse\_config}}
+\index{parse\_config@{parse\_config}!rusync@{rusync}}
+\doxysubsubsection{\texorpdfstring{parse\_config()}{parse\_config()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrusync_1_1Config}{Config}} rusync\+::parse\+\_\+config (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerusync_abed745eb1d6bd4f7a5c0afacd21c4c91}\label{namespacerusync_abed745eb1d6bd4f7a5c0afacd21c4c91}} 
+\index{rusync@{rusync}!sigtermHandler@{sigtermHandler}}
+\index{sigtermHandler@{sigtermHandler}!rusync@{rusync}}
+\doxysubsubsection{\texorpdfstring{sigtermHandler()}{sigtermHandler()}}
+{\footnotesize\ttfamily void rusync\+::sigterm\+Handler (\begin{DoxyParamCaption}\item[{int}]{signum }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerusync_a85a3b70fefdc4eb19c854a6185882fcc}\label{namespacerusync_a85a3b70fefdc4eb19c854a6185882fcc}} 
+\index{rusync@{rusync}!start@{start}}
+\index{start@{start}!rusync@{rusync}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily int rusync\+::start (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerusync_aa65e2ef874979a1dab442c0aae527a85}\label{namespacerusync_aa65e2ef874979a1dab442c0aae527a85}} 
+\index{rusync@{rusync}!truncate\_path@{truncate\_path}}
+\index{truncate\_path@{truncate\_path}!rusync@{rusync}}
+\doxysubsubsection{\texorpdfstring{truncate\_path()}{truncate\_path()}}
+{\footnotesize\ttfamily fs\+::path rusync\+::truncate\+\_\+path (\begin{DoxyParamCaption}\item[{fs\+::path}]{path,  }\item[{fs\+::path}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+erases origin from path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+{\em origin} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fs\+::path truncated path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacerusync_aa385384823fa3b7386309217842fce28}\label{namespacerusync_aa385384823fa3b7386309217842fce28}} 
+\index{rusync@{rusync}!url\_encode@{url\_encode}}
+\index{url\_encode@{url\_encode}!rusync@{rusync}}
+\doxysubsubsection{\texorpdfstring{url\_encode()}{url\_encode()}}
+{\footnotesize\ttfamily std\+::string rusync\+::url\+\_\+encode (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+percent-\/encode provided url 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string encoded 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacerusync_a26b874e8e3b64292e377b4d8fcc0cc71}\label{namespacerusync_a26b874e8e3b64292e377b4d8fcc0cc71}} 
+\index{rusync@{rusync}!stopped@{stopped}}
+\index{stopped@{stopped}!rusync@{rusync}}
+\doxysubsubsection{\texorpdfstring{stopped}{stopped}}
+{\footnotesize\ttfamily std\+::atomic\+\_\+bool rusync\+::stopped = false\hspace{0.3cm}{\ttfamily [inline]}}
+

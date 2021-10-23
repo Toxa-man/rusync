@@ -1,0 +1,83 @@
+\hypertarget{classFileWatch_1_1Inotify}{}\doxysection{File\+Watch\+::Inotify$<$ Log $>$ Class Template Reference}
+\label{classFileWatch_1_1Inotify}\index{FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}}
+
+
+{\ttfamily \#include $<$I\+Notify.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFileWatch_1_1Inotify_ae79b0abb15eb42955e9c3aa563d5ed65}{Inotify}} (const Log \&log, uint32\+\_\+t mask=I\+N\+\_\+\+A\+L\+L\+\_\+\+E\+V\+E\+N\+TS)
+\item 
+\mbox{\hyperlink{classFileWatch_1_1Inotify_a0e17c3a6e0262f77b7cc5be4324b23a5}{$\sim$\+Inotify}} ()
+\item 
+const std\+::string \& \mbox{\hyperlink{classFileWatch_1_1Inotify_aca2cbcd794aca52a99090dfcf5f9b1aa}{path}} (int wd) const
+\item 
+int \mbox{\hyperlink{classFileWatch_1_1Inotify_a3a639e5776a6b0f5db046e4ff0eeabd0}{add\+\_\+watch}} (const std\+::string \&, bool=true)
+\item 
+void \mbox{\hyperlink{classFileWatch_1_1Inotify_ad6c9da25a973958406bd8c069883f942}{rm\+\_\+watch}} (int wd) noexcept
+\item 
+void \mbox{\hyperlink{classFileWatch_1_1Inotify_a6dce35ac3fd38d68ce0e2a82b260f462}{rm\+\_\+all\+\_\+watches}} () noexcept
+\item 
+const inotify\+\_\+event $\ast$ \mbox{\hyperlink{classFileWatch_1_1Inotify_a6d6234e760ae3a9a1f20b8c1f6be67f3}{read}} (int timeout=(-\/1), int read\+\_\+delay=0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFileWatch_1_1Inotify_ae79b0abb15eb42955e9c3aa563d5ed65}\label{classFileWatch_1_1Inotify_ae79b0abb15eb42955e9c3aa563d5ed65}} 
+\index{FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}!Inotify@{Inotify}}
+\index{Inotify@{Inotify}!FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}}
+\doxysubsubsection{\texorpdfstring{Inotify()}{Inotify()}}
+{\footnotesize\ttfamily template$<$typename Log $>$ \\
+\mbox{\hyperlink{classFileWatch_1_1Inotify}{File\+Watch\+::\+Inotify}}$<$ Log $>$\+::\mbox{\hyperlink{classFileWatch_1_1Inotify}{Inotify}} (\begin{DoxyParamCaption}\item[{const Log \&}]{log,  }\item[{uint32\+\_\+t}]{mask = {\ttfamily IN\+\_\+ALL\+\_\+EVENTS} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classFileWatch_1_1Inotify_a0e17c3a6e0262f77b7cc5be4324b23a5}\label{classFileWatch_1_1Inotify_a0e17c3a6e0262f77b7cc5be4324b23a5}} 
+\index{FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}!````~Inotify@{$\sim$Inotify}}
+\index{````~Inotify@{$\sim$Inotify}!FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Inotify()}{~Inotify()}}
+{\footnotesize\ttfamily template$<$typename Log $>$ \\
+\mbox{\hyperlink{classFileWatch_1_1Inotify}{File\+Watch\+::\+Inotify}}$<$ Log $>$\+::$\sim$\mbox{\hyperlink{classFileWatch_1_1Inotify}{Inotify}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFileWatch_1_1Inotify_a3a639e5776a6b0f5db046e4ff0eeabd0}\label{classFileWatch_1_1Inotify_a3a639e5776a6b0f5db046e4ff0eeabd0}} 
+\index{FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}!add\_watch@{add\_watch}}
+\index{add\_watch@{add\_watch}!FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}}
+\doxysubsubsection{\texorpdfstring{add\_watch()}{add\_watch()}}
+{\footnotesize\ttfamily template$<$typename Log $>$ \\
+int \mbox{\hyperlink{classFileWatch_1_1Inotify}{File\+Watch\+::\+Inotify}}$<$ Log $>$\+::add\+\_\+watch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{bool}]{in\+\_\+move = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classFileWatch_1_1Inotify_aca2cbcd794aca52a99090dfcf5f9b1aa}\label{classFileWatch_1_1Inotify_aca2cbcd794aca52a99090dfcf5f9b1aa}} 
+\index{FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}!path@{path}}
+\index{path@{path}!FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}}
+\doxysubsubsection{\texorpdfstring{path()}{path()}}
+{\footnotesize\ttfamily template$<$typename Log $>$ \\
+const std\+::string\& \mbox{\hyperlink{classFileWatch_1_1Inotify}{File\+Watch\+::\+Inotify}}$<$ Log $>$\+::path (\begin{DoxyParamCaption}\item[{int}]{wd }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classFileWatch_1_1Inotify_a6d6234e760ae3a9a1f20b8c1f6be67f3}\label{classFileWatch_1_1Inotify_a6d6234e760ae3a9a1f20b8c1f6be67f3}} 
+\index{FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}!read@{read}}
+\index{read@{read}!FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily template$<$typename Log $>$ \\
+const inotify\+\_\+event $\ast$ \mbox{\hyperlink{classFileWatch_1_1Inotify}{File\+Watch\+::\+Inotify}}$<$ Log $>$\+::read (\begin{DoxyParamCaption}\item[{int}]{timeout = {\ttfamily (-\/1)},  }\item[{int}]{read\+\_\+delay = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classFileWatch_1_1Inotify_a6dce35ac3fd38d68ce0e2a82b260f462}\label{classFileWatch_1_1Inotify_a6dce35ac3fd38d68ce0e2a82b260f462}} 
+\index{FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}!rm\_all\_watches@{rm\_all\_watches}}
+\index{rm\_all\_watches@{rm\_all\_watches}!FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}}
+\doxysubsubsection{\texorpdfstring{rm\_all\_watches()}{rm\_all\_watches()}}
+{\footnotesize\ttfamily template$<$typename Log $>$ \\
+void \mbox{\hyperlink{classFileWatch_1_1Inotify}{File\+Watch\+::\+Inotify}}$<$ Log $>$\+::rm\+\_\+all\+\_\+watches\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classFileWatch_1_1Inotify_ad6c9da25a973958406bd8c069883f942}\label{classFileWatch_1_1Inotify_ad6c9da25a973958406bd8c069883f942}} 
+\index{FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}!rm\_watch@{rm\_watch}}
+\index{rm\_watch@{rm\_watch}!FileWatch::Inotify$<$ Log $>$@{FileWatch::Inotify$<$ Log $>$}}
+\doxysubsubsection{\texorpdfstring{rm\_watch()}{rm\_watch()}}
+{\footnotesize\ttfamily template$<$typename Log $>$ \\
+void \mbox{\hyperlink{classFileWatch_1_1Inotify}{File\+Watch\+::\+Inotify}}$<$ Log $>$\+::rm\+\_\+watch (\begin{DoxyParamCaption}\item[{int}]{wd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+client/src/\mbox{\hyperlink{INotify_8hpp}{I\+Notify.\+hpp}}\end{DoxyCompactItemize}

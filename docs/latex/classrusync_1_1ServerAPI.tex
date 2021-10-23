@@ -1,0 +1,255 @@
+\hypertarget{classrusync_1_1ServerAPI}{}\doxysection{rusync\+::Server\+A\+PI Class Reference}
+\label{classrusync_1_1ServerAPI}\index{rusync::ServerAPI@{rusync::ServerAPI}}
+
+
+Contains methods for work with remote server.  
+
+
+
+
+{\ttfamily \#include $<$Server\+A\+P\+I.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classrusync_1_1ServerAPI_a3652e324c082e4b01156d7c0594a3eed}{Get\+Files\+Description\+Callback}} = std\+::function$<$ void(std\+::set$<$ \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} $>$)$>$
+\item 
+using \mbox{\hyperlink{classrusync_1_1ServerAPI_a7ac0a85fd84762f78ccffa70ea4e5afd}{Get\+File\+Callback}} = std\+::function$<$ void(std\+::vector$<$ char $>$)$>$
+\item 
+using \mbox{\hyperlink{classrusync_1_1ServerAPI_adde5a093c3fdde511097ed73e3a50997}{Get\+Meta\+Callback}} = std\+::function$<$ void(bool is\+\_\+file, std\+::vector$<$ \mbox{\hyperlink{structFileChunk}{File\+Chunk}} $>$)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrusync_1_1ServerAPI_a356c51d01bf31a99ba31d76ec3a71375}{Server\+A\+PI}} (const \mbox{\hyperlink{structrusync_1_1Config}{Config}} \&conf, boost\+::asio\+::io\+\_\+service \&io\+\_\+service)
+\item 
+\mbox{\hyperlink{classrusync_1_1ServerAPI_a86bd2f4c90ac1f239f9225b7066c2441}{$\sim$\+Server\+A\+PI}} ()
+\item 
+void \mbox{\hyperlink{classrusync_1_1ServerAPI_aafa9144c5e64c2799991e4719c221deb}{create\+\_\+session}} (boost\+::asio\+::io\+\_\+service \&io\+\_\+service)
+\begin{DoxyCompactList}\small\item\em Establishes tcp connection to server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrusync_1_1ServerAPI_a2b072d7faf170fc60b6f463607df01cb}{retry\+\_\+connection}} (boost\+::asio\+::io\+\_\+service \&io\+\_\+service)
+\begin{DoxyCompactList}\small\item\em schedule connection retry within C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+R\+Y\+\_\+\+T\+I\+M\+E\+O\+UT seconds \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrusync_1_1ServerAPI_a1f690530ccf306f001fe4e40759d6b5b}{get\+\_\+files\+\_\+description}} (\mbox{\hyperlink{classrusync_1_1ServerAPI_a3652e324c082e4b01156d7c0594a3eed}{Get\+Files\+Description\+Callback}} cb)
+\begin{DoxyCompactList}\small\item\em Get the files description object as set of \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} and passes it into provided cb. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrusync_1_1ServerAPI_a3df67c0ba7536663c54cc4829ce12b27}{upload\+\_\+file}} (std\+::string file, const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em upload file to server \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrusync_1_1ServerAPI_a8591ec63b62d95249187e52522cb3cdd}{upload\+\_\+dir}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em upload dir to server \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrusync_1_1ServerAPI_a6afc6c310aa262715013de0ffd994e80}{get\+\_\+file}} (const std\+::string \&path, \mbox{\hyperlink{classrusync_1_1ServerAPI_a7ac0a85fd84762f78ccffa70ea4e5afd}{Get\+File\+Callback}} cb)
+\begin{DoxyCompactList}\small\item\em Downloads remote file and passes it as vector$<$char$>$ to provided cb. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrusync_1_1ServerAPI_aa6463c11a147f6675efce9a18af41012}{upload\+\_\+patch}} (const std\+::string \&path, uint64\+\_\+t offset, std\+::string data, bool end=false)
+\begin{DoxyCompactList}\small\item\em uploads file patch to server \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrusync_1_1ServerAPI_a9cb35620db03e30fa8987307ba736cfa}{remove\+\_\+file}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em remove file using path \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrusync_1_1ServerAPI_aed50ad9e8c1b464f380b205dba76d6dd}{get\+\_\+meta}} (const std\+::string \&path, \mbox{\hyperlink{classrusync_1_1ServerAPI_adde5a093c3fdde511097ed73e3a50997}{Get\+Meta\+Callback}} cb)
+\begin{DoxyCompactList}\small\item\em Get the meta object from server and pass it as vector$<$\+File\+Chunk$>$ to provided cb. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classrusync_1_1ServerAPI_af5a16c088c83d896166817af2bc3091a}{connected}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains methods for work with remote server. 
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_a7ac0a85fd84762f78ccffa70ea4e5afd}\label{classrusync_1_1ServerAPI_a7ac0a85fd84762f78ccffa70ea4e5afd}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!GetFileCallback@{GetFileCallback}}
+\index{GetFileCallback@{GetFileCallback}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{GetFileCallback}{GetFileCallback}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classrusync_1_1ServerAPI_a7ac0a85fd84762f78ccffa70ea4e5afd}{rusync\+::\+Server\+A\+P\+I\+::\+Get\+File\+Callback}} =  std\+::function$<$void(std\+::vector$<$char$>$)$>$}
+
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_a3652e324c082e4b01156d7c0594a3eed}\label{classrusync_1_1ServerAPI_a3652e324c082e4b01156d7c0594a3eed}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!GetFilesDescriptionCallback@{GetFilesDescriptionCallback}}
+\index{GetFilesDescriptionCallback@{GetFilesDescriptionCallback}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{GetFilesDescriptionCallback}{GetFilesDescriptionCallback}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classrusync_1_1ServerAPI_a3652e324c082e4b01156d7c0594a3eed}{rusync\+::\+Server\+A\+P\+I\+::\+Get\+Files\+Description\+Callback}} =  std\+::function$<$void(std\+::set$<$\mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}}$>$)$>$}
+
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_adde5a093c3fdde511097ed73e3a50997}\label{classrusync_1_1ServerAPI_adde5a093c3fdde511097ed73e3a50997}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!GetMetaCallback@{GetMetaCallback}}
+\index{GetMetaCallback@{GetMetaCallback}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{GetMetaCallback}{GetMetaCallback}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classrusync_1_1ServerAPI_adde5a093c3fdde511097ed73e3a50997}{rusync\+::\+Server\+A\+P\+I\+::\+Get\+Meta\+Callback}} =  std\+::function$<$void(bool is\+\_\+file, std\+::vector$<$\mbox{\hyperlink{structFileChunk}{File\+Chunk}}$>$)$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_a356c51d01bf31a99ba31d76ec3a71375}\label{classrusync_1_1ServerAPI_a356c51d01bf31a99ba31d76ec3a71375}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!ServerAPI@{ServerAPI}}
+\index{ServerAPI@{ServerAPI}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{ServerAPI()}{ServerAPI()}}
+{\footnotesize\ttfamily rusync\+::\+Server\+A\+P\+I\+::\+Server\+A\+PI (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structrusync_1_1Config}{Config}} \&}]{conf,  }\item[{boost\+::asio\+::io\+\_\+service \&}]{io\+\_\+service }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_a86bd2f4c90ac1f239f9225b7066c2441}\label{classrusync_1_1ServerAPI_a86bd2f4c90ac1f239f9225b7066c2441}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!````~ServerAPI@{$\sim$ServerAPI}}
+\index{````~ServerAPI@{$\sim$ServerAPI}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{$\sim$ServerAPI()}{~ServerAPI()}}
+{\footnotesize\ttfamily rusync\+::\+Server\+A\+P\+I\+::$\sim$\+Server\+A\+PI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_af5a16c088c83d896166817af2bc3091a}\label{classrusync_1_1ServerAPI_af5a16c088c83d896166817af2bc3091a}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!connected@{connected}}
+\index{connected@{connected}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{connected()}{connected()}}
+{\footnotesize\ttfamily bool rusync\+::\+Server\+A\+P\+I\+::connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+true is currently connected to server 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_aafa9144c5e64c2799991e4719c221deb}\label{classrusync_1_1ServerAPI_aafa9144c5e64c2799991e4719c221deb}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!create\_session@{create\_session}}
+\index{create\_session@{create\_session}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{create\_session()}{create\_session()}}
+{\footnotesize\ttfamily void rusync\+::\+Server\+A\+P\+I\+::create\+\_\+session (\begin{DoxyParamCaption}\item[{boost\+::asio\+::io\+\_\+service \&}]{io\+\_\+service }\end{DoxyParamCaption})}
+
+
+
+Establishes tcp connection to server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+service} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_a6afc6c310aa262715013de0ffd994e80}\label{classrusync_1_1ServerAPI_a6afc6c310aa262715013de0ffd994e80}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!get\_file@{get\_file}}
+\index{get\_file@{get\_file}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{get\_file()}{get\_file()}}
+{\footnotesize\ttfamily void rusync\+::\+Server\+A\+P\+I\+::get\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{classrusync_1_1ServerAPI_a7ac0a85fd84762f78ccffa70ea4e5afd}{Get\+File\+Callback}}}]{cb }\end{DoxyParamCaption})}
+
+
+
+Downloads remote file and passes it as vector$<$char$>$ to provided cb. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & path to file at server \\
+\hline
+{\em cb} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_a1f690530ccf306f001fe4e40759d6b5b}\label{classrusync_1_1ServerAPI_a1f690530ccf306f001fe4e40759d6b5b}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!get\_files\_description@{get\_files\_description}}
+\index{get\_files\_description@{get\_files\_description}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{get\_files\_description()}{get\_files\_description()}}
+{\footnotesize\ttfamily void rusync\+::\+Server\+A\+P\+I\+::get\+\_\+files\+\_\+description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrusync_1_1ServerAPI_a3652e324c082e4b01156d7c0594a3eed}{Get\+Files\+Description\+Callback}}}]{cb }\end{DoxyParamCaption})}
+
+
+
+Get the files description object as set of \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}} and passes it into provided cb. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cb} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_aed50ad9e8c1b464f380b205dba76d6dd}\label{classrusync_1_1ServerAPI_aed50ad9e8c1b464f380b205dba76d6dd}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!get\_meta@{get\_meta}}
+\index{get\_meta@{get\_meta}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{get\_meta()}{get\_meta()}}
+{\footnotesize\ttfamily void rusync\+::\+Server\+A\+P\+I\+::get\+\_\+meta (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{classrusync_1_1ServerAPI_adde5a093c3fdde511097ed73e3a50997}{Get\+Meta\+Callback}}}]{cb }\end{DoxyParamCaption})}
+
+
+
+Get the meta object from server and pass it as vector$<$\+File\+Chunk$>$ to provided cb. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+{\em cb} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_a9cb35620db03e30fa8987307ba736cfa}\label{classrusync_1_1ServerAPI_a9cb35620db03e30fa8987307ba736cfa}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!remove\_file@{remove\_file}}
+\index{remove\_file@{remove\_file}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{remove\_file()}{remove\_file()}}
+{\footnotesize\ttfamily void rusync\+::\+Server\+A\+P\+I\+::remove\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+remove file using path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_a2b072d7faf170fc60b6f463607df01cb}\label{classrusync_1_1ServerAPI_a2b072d7faf170fc60b6f463607df01cb}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!retry\_connection@{retry\_connection}}
+\index{retry\_connection@{retry\_connection}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{retry\_connection()}{retry\_connection()}}
+{\footnotesize\ttfamily void rusync\+::\+Server\+A\+P\+I\+::retry\+\_\+connection (\begin{DoxyParamCaption}\item[{boost\+::asio\+::io\+\_\+service \&}]{io\+\_\+service }\end{DoxyParamCaption})}
+
+
+
+schedule connection retry within C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+R\+Y\+\_\+\+T\+I\+M\+E\+O\+UT seconds 
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+service} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_a8591ec63b62d95249187e52522cb3cdd}\label{classrusync_1_1ServerAPI_a8591ec63b62d95249187e52522cb3cdd}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!upload\_dir@{upload\_dir}}
+\index{upload\_dir@{upload\_dir}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{upload\_dir()}{upload\_dir()}}
+{\footnotesize\ttfamily void rusync\+::\+Server\+A\+P\+I\+::upload\+\_\+dir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+upload dir to server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & path to dir \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_a3df67c0ba7536663c54cc4829ce12b27}\label{classrusync_1_1ServerAPI_a3df67c0ba7536663c54cc4829ce12b27}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!upload\_file@{upload\_file}}
+\index{upload\_file@{upload\_file}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{upload\_file()}{upload\_file()}}
+{\footnotesize\ttfamily void rusync\+::\+Server\+A\+P\+I\+::upload\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{file,  }\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+upload file to server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & file\textquotesingle{}s content \\
+\hline
+{\em path} & file\textquotesingle{}s path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrusync_1_1ServerAPI_aa6463c11a147f6675efce9a18af41012}\label{classrusync_1_1ServerAPI_aa6463c11a147f6675efce9a18af41012}} 
+\index{rusync::ServerAPI@{rusync::ServerAPI}!upload\_patch@{upload\_patch}}
+\index{upload\_patch@{upload\_patch}!rusync::ServerAPI@{rusync::ServerAPI}}
+\doxysubsubsection{\texorpdfstring{upload\_patch()}{upload\_patch()}}
+{\footnotesize\ttfamily void rusync\+::\+Server\+A\+P\+I\+::upload\+\_\+patch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{uint64\+\_\+t}]{offset,  }\item[{std\+::string}]{data,  }\item[{bool}]{end = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+uploads file patch to server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & -\/ path to file on server \\
+\hline
+{\em offset} & -\/ positon in bytes from which patch starts \\
+\hline
+{\em data} & -\/ binary data to patch \\
+\hline
+{\em end} & -\/ if true -\/ this is the last chunk, meaning that all data after that chunk will be truncated \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+client/src/\mbox{\hyperlink{ServerAPI_8hpp}{Server\+A\+P\+I.\+hpp}}\item 
+client/src/\mbox{\hyperlink{ServerAPI_8cpp}{Server\+A\+P\+I.\+cpp}}\end{DoxyCompactItemize}

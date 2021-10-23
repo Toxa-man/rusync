@@ -1,0 +1,47 @@
+\hypertarget{DirEntry_8hpp}{}\doxysection{common/\+Dir\+Entry.hpp File Reference}
+\label{DirEntry_8hpp}\index{common/DirEntry.hpp@{common/DirEntry.hpp}}
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$xxhash.\+h$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$syncstream$>$}\newline
+{\ttfamily \#include $<$boost/assert.\+hpp$>$}\newline
+Include dependency graph for Dir\+Entry.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DirEntry_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DirEntry_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrusync_1_1DirEntry}{rusync\+::\+Dir\+Entry}}
+\begin{DoxyCompactList}\small\item\em described entry within file system \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacerusync}{rusync}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacerusync_a2364a903505feb6163ac8d46463a9f5d}{rusync\+::operator$<$}} (const Dir\+Entry \&l, const Dir\+Entry \&r)
+\item 
+bool \mbox{\hyperlink{namespacerusync_a091a4282749fdc3b406187ba45da2fe3}{rusync\+::operator==}} (const Dir\+Entry \&l, const Dir\+Entry \&r)
+\item 
+{\footnotesize template$<$typename T  = std\+::set$<$\+Dir\+Entry$>$$>$ }\\T \mbox{\hyperlink{namespacerusync_a322e4f3088937c4977d6f6d78698fd78}{rusync\+::extract\+\_\+entries\+\_\+from\+\_\+path}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Extracts entries from path and returns it as container T of \mbox{\hyperlink{structrusync_1_1DirEntry}{Dir\+Entry}}. Only counts regular files and dirs. \end{DoxyCompactList}\end{DoxyCompactItemize}
