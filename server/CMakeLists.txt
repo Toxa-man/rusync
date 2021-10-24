@@ -7,6 +7,8 @@ project (rusync_server)
 #     message(STATUS "${_variableName}=${${_variableName}}")
 # endforeach()
 
+add_subdirectory(tests)
+
 file(GLOB SOURCE_FILES 
         "src/main.cpp"
         "src/ServerSync.cpp"

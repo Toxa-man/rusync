@@ -7,6 +7,7 @@ foreach (_variableName ${_variableNames})
     message(STATUS "${_variableName}=${${_variableName}}")
 endforeach()
 
+add_subdirectory(tests)
 
 set(CMAKE_BUILD_TYPE Debug)
 

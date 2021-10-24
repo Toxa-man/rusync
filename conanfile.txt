@@ -2,6 +2,7 @@
 libnghttp2/1.45.1
 rapidjson/cci.20200410
 xxhash/0.8.0
+gtest/1.11.0
 
 [generators]
 cmake
