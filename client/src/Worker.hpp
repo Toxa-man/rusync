@@ -2,10 +2,12 @@
 #include "Config.hpp"
 #include "ServerAPI.hpp"
 #include "Thread.hpp"
+#include <exception>
 #include <set>
 #include <boost/asio.hpp>
 #include <DirEntry.hpp>
 #include <map>
+#include <syncstream>
 
 namespace rusync {
 
@@ -70,27 +72,32 @@ private:
 template <Worker::Operation operation, typename ... Args>
 void Worker::perform_operation(Args... args) {
     boost::asio::post(m_io_service, [this, ...args = std::move(args)]() {
-        if (!m_api) {
-            m_api = std::make_unique<ServerAPI>(m_conf, m_io_service);
+        try {
+            if (!m_api) {
+                m_api = std::make_unique<ServerAPI>(m_conf, m_io_service);
+            }
+            if (!m_api->connected()) {
+                auto reschedule_timer = std::make_shared<boost::asio::deadline_timer>(m_io_service, boost::posix_time::seconds(2));
+                reschedule_timer->async_wait([this, ...args = std::move(args), reschedule_timer](const boost::system::error_code& /*e*/) {
+                    perform_operation<operation>(std::move(args)...);
+                    m_reschedule_timers.erase(std::remove(m_reschedule_timers.begin(), m_reschedule_timers.end(), reschedule_timer));
+                });
+                m_reschedule_timers.push_back(reschedule_timer);
+                return;
+            }
+            if constexpr (operation == INITIAL_SYNC) {
+                perform_initial_sync();
+            } else if constexpr (operation == ADDED) {
+                file_added(args...);
+            } else if constexpr (operation == REMOVED) {
+                file_removed(args...);
+            } else if constexpr (operation == MODIFIED) {
+                file_modified(args...);
+            }
+        } catch(const std::exception& err) {
+            std::osyncstream(std::cerr) << "Exception occured: " << err.what() << std::endl;
         }
-        if (!m_api->connected()) {
-            auto reschedule_timer = std::make_shared<boost::asio::deadline_timer>(m_io_service, boost::posix_time::seconds(2));
-            reschedule_timer->async_wait([this, ...args = std::move(args), reschedule_timer](const boost::system::error_code& /*e*/) {
-                perform_operation<operation>(std::move(args)...);
-                m_reschedule_timers.erase(std::remove(m_reschedule_timers.begin(), m_reschedule_timers.end(), reschedule_timer));
-            });
-            m_reschedule_timers.push_back(reschedule_timer);
-            return;
-        }
-        if constexpr (operation == INITIAL_SYNC) {
-            perform_initial_sync();
-        } else if constexpr (operation == ADDED) {
-            file_added(args...);
-        } else if constexpr (operation == REMOVED) {
-            file_removed(args...);
-        } else if constexpr (operation == MODIFIED) {
-            file_modified(args...);
-        }
+
     });
 }
 }
