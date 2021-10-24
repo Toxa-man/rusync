@@ -6,14 +6,14 @@ Key is some unique string which allows server to distringuish between clients
 
 ## Server
 ### Usage: rusync_server \<ip\> \<port\> \<path/to/dir\>
-Internally server will save client files into key/dir_path where key - is key parameter from http API and dir_path provided from command line
+Internally server will save client files into dir_path/key where key - is key parameter from http API and dir_path provided from command line
 ## Prerequisites:
 cmake, C\+\+20 - compliant compiller, conan, git  
 Verified setup: cmake/3.16.3, g++/11.1.0, conan/1.38.0  
 In order to run integration tests: pytest  
 In order to build documentation: doxygen, graphviz  
 ## Building project
-$`git clone `  
+$`git clone https://github.com/Toxa-man/rusync.git`  
 $`cd rusync`  
 $`git submodule update --init`  
 $`mkdir build`  
