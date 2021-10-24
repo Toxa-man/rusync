@@ -1,22 +1,14 @@
 #pragma once 
-#include <bits/stdint-uintn.h>
 #include <nghttp2/asio_http2_server.h>
 #include <cstddef>
 #include <filesystem>
 #include "Config.hpp"
 #include "boost/date_time/posix_time/posix_time_duration.hpp"
-#include "nghttp2/asio_http2.h"
 #include <iostream>
 #include "DirEntry.hpp"
-#include <rapidjson/document.h>
-#include <rapidjson/writer.h>
-#include <rapidjson/stringbuffer.h>
-#include <boost/algorithm/string.hpp>
+
 #include "Utils.hpp"
 #include "FileChunk.hpp"
-#include "BinaryWriter.hpp"
-#include <syncstream>
-
 
 namespace rusync {
 

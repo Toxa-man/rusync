@@ -2,17 +2,12 @@
 #include "Config.hpp"
 #include "FileChunk.hpp"
 #include "boost/asio/io_service.hpp"
-#include "boost/asio/ip/tcp.hpp"
 #include <nghttp2/asio_http2_client.h>
-#include <set>
 #include "DirEntry.hpp"
-#include <algorithm>
 #include <functional>
 #include <vector>
-#include <numeric>
 #include "Utils.hpp"
 #include "boost/date_time/posix_time/posix_time_duration.hpp"
-#include <rapidjson/document.h>
 
 namespace rusync {
 /**

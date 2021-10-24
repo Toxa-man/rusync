@@ -5,6 +5,8 @@
 #include "boost/asio/io_service.hpp"
 #include "boost/asio/post.hpp"
 #include "nghttp2/asio_http2.h"
+#include <rapidjson/document.h>
+#include <numeric>
 
 namespace rusync {
 ServerAPI::ServerAPI(const Config& conf, boost::asio::io_service& io_service) : 
