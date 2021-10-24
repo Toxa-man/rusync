@@ -1,3 +1,4 @@
+#include <filesystem>
 #include <syncstream>
 #include <iostream>
 #include "Config.hpp"
@@ -15,9 +16,14 @@ int start(int argc, char** argv) {
 
     Config conf = parse_config(argv);
 
-    ServerSync server {conf};
+    if (!fs::exists(conf.path)) {
+        std::cerr << "Please provide existing dir" << std::endl;
+        return -1;
+    }
 
+    ServerSync server {conf};
     server.listen();
+    
     std::osyncstream(std::cout) << "Server Exiting..." << std::endl;
 
     return 0;
