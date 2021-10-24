@@ -12,6 +12,7 @@
 #include <rapidjson/document.h>
 #include <algorithm>
 #include <string>
+#include <syncstream>
 #include <thread>
 #include "SyncApp.hpp"
 #include "Config.hpp"
@@ -41,8 +42,7 @@ int start(int argc, char** argv) {
         return -2;
     }
     SyncApp app {conf};
-    // using namespace std::chrono_literals;;
-    // std::this_thread::sleep_for(5min);
+    std::osyncstream(std::cout) << "Client exiting..." << std::endl;
     
     return 0;
 

@@ -14,7 +14,6 @@ m_thread{m_io_service}, m_conf {conf} {
 
 Worker::~Worker() {
     m_io_service.stop();
-    std::osyncstream(std::cout) << "~Worker" << std::endl;
 }
 
 

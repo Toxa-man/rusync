@@ -141,9 +141,8 @@ void ServerAPI::perform_http_request(const std::string& path,
         std::osyncstream(std::cerr) << "Failed to perform request for " << uri << ", reason: " << ec.message() << std::endl;
         return;
     }
-    std::osyncstream(std::cout) << "Performing " << method << " request to " << uri << std::endl;
-    req->on_response([receive_cb](const nghttp2::asio_http2::client::response& resp){
-        std::osyncstream(std::cout) << "Got status_code " << resp.status_code() << std::endl;
+    req->on_response([receive_cb, method, uri](const nghttp2::asio_http2::client::response& resp){
+        std::osyncstream(std::cout) << "Performed " << method << " request to " << nghttp2::asio_http2::percent_decode(uri) << ", response code: " << resp.status_code() << std::endl;
         if (resp.status_code() != 200) {
             return;
         }

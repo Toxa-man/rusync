@@ -3,8 +3,7 @@
 
 namespace rusync {
 ServerSync::ServerSync(const Config& config) : m_conf {config} {
-    // m_server.num_threads(std::thread::hardware_concurrency());
-    // m_server.read_timeout(boost::posix_time::seconds{20000});
+    m_server.num_threads(std::thread::hardware_concurrency());
     m_server.handle(FILES_PATH, [this](const auto&... args) {
         handle_files_request(args...);
     });
