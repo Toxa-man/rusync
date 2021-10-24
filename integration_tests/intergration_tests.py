@@ -344,29 +344,19 @@ class TestBasic(TestCase):
         assert_paths_in_sync(self.cpath, self.spath)
 
     def test_file_to_empty_dirs_and_back(self):
-        print("=====================================AAAAAAAAA STARTING ADDING FIRST FILES")
         for i in range(0, 10):
             spit(join(self.cpath, "file_%i" % (i,)), "contents_%i" % (i,))
-        print("=====================================END STARTING ADDING FIRST FILES")
         assert_paths_in_sync(self.cpath, self.spath)
 
-        print("=====================================AAAAAAAAA STARTING REMOVING FIRST FILES")
         wipe_path(self.cpath)
-        print("=====================================AAAAAAA END REMOVING FIRST FIRST")
-        print("=====================================AAAAAAAAA STARTING CREATING SECOND DIRS" )
         for i in range(0, 10):
             mkdir(join(self.cpath, "file_%i" % (i,)))
-        print("=====================================AAAAAAAAA END CREATING SECOND DIRS" )
         assert_paths_in_sync(self.cpath, self.spath)
 
-        print("=====================================AAAAAAAAA STARTING REMOVING SECOND DIRS")
         wipe_path(self.cpath)
-        print("=====================================AAAAAAA END REMOVING SECOND DIRS")
 
-        print("=====================================AAAAAAAAA STARTING CREATING THIRD FILES" )
         for i in range(0, 10):
             spit(join(self.cpath, "file_%i" % (i,)), "contents_%i" % (i,))
-        print("=====================================AAAAAAAAA END CREATING THIRD FILES" )
 
         assert_paths_in_sync(self.cpath, self.spath)
 
