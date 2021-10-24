@@ -2,3 +2,4 @@ build
 .vscode
 integration_tests/__pycache__/
 integration_tests/.pytest_cache
+*.log

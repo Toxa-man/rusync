@@ -1,7 +1,6 @@
 #pragma once
 #include "Config.hpp"
 #include "WorkerPool.hpp"
-#include "INotify.hpp"
 #include "efsw/efsw.hpp"
 #include <syncstream>
 #include <boost/asio.hpp>
